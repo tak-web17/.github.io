@@ -1,1 +1,1749 @@
+/* CSSリセット (ブラウザによる差異を極力無くす) */
+@import url("normalize.css");
 
+/* ------------------------------------- */
+/* スマートフォン・タブレット (max-width: 768px 以下) */
+/* ここにスマートフォン・タブレット用のスタイルを記述します */
+/* ------------------------------------- */
+/* SP版トップページここから */
+@media screen and (max-width: 768px) {
+  body {
+    font-family: "ヒラギノ角ゴ Pro W3", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    /*background-image: url(../images/mokume.jpg);
+    background-repeat: repeat;*/
+  }
+  body.nav-open {
+    overflow: hidden;
+  }
+  
+  .background {
+    background-image: url(images/mokume.jpg);
+  }
+  a {
+    color: #bf830b;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  header,
+  nav,
+  footer {
+    
+  }
+  #top {
+  }
+  /* ハンバーガーメニュー */
+  #hamburger {
+  }
+  .menu-toggle {
+    display: block;
+    width: 35px;
+    height: 28px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    margin: 5px 0;
+    background: #bf830b;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  /* ← 開いた状態（×マーク） */
+  .menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+  /* ヘッダー */
+  .header-container {
+
+  }
+
+  header {
+    position: relative;
+    z-index: 10;
+  }
+  header h1 img {
+    max-width: 120px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+  #header_nav {
+    display: none; /* メニュー非表示 */
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  nav ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  #header_nav.open {
+    display: block;
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* パンくずリスト */
+  #breadcrumb {
+    display: none;
+    margin-top: 1.5em;
+    padding: 0.5em;
+    font-size: 0.9em;
+    color: #666;
+  }
+  .menu-label {
+    font-size: 0.75em;
+    color: #bf830b;
+    text-align: center;
+    margin-top: 2px;
+  }
+  /* こだわり・about */
+  #about {
+  }
+  .fv {
+  }
+  .fv img {
+    width: 100%; /* スマホ・タブレットでは幅100%に */
+    height: 600px;
+    object-fit: cover;
+  }
+  .about_text {
+    text-align: center;
+        font-size: 18px;
+        color: #333;
+        padding-bottom: 0.3em;
+        letter-spacing: 1.5px;
+  }
+  .about_photo img {
+
+  }
+  .page_title {
+    text-align: center;
+        font-size: 18px;
+        color: #333;
+        padding-bottom: 0.3em;
+        letter-spacing: 1.5px;
+  }
+  .en_text{
+    text-align: center;
+    color: #333;
+    font-size: 12px;
+    padding-bottom: 0.3em;
+    letter-spacing: 1.5px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+  }
+
+  .subtext {
+    font-size: 13px;
+    margin: 36px;
+    text-align: center;
+    line-height: 2;
+  }
+
+  /* 商品紹介・item */
+  #item {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 12px; /* スマホ・タブレットのパディング */
+  }
+  section {
+    margin: 0;
+  }
+
+  /* 各商品コンテンツ（画像とテキストのペア）の共通スタイル */
+  .item_content {
+    display: flex; /* Flexboxを使って子要素（画像とテキスト）を並べる */
+    flex-direction: column; /* スマートフォン・タブレットでは縦並びにする */
+    align-items: center; /* 垂直方向の中央揃え (縦並びの場合、水平中央揃えになる) */
+    margin-bottom: 40px; /* 各ペアの下に余白 */
+    gap: 20px; /* 画像とテキストの間の余白 */
+    max-width: 600px; /* 適度な最大幅 */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0; /* 上下のパディングを追加 */
+  }
+
+  /* 画像の共通スタイル */
+  .item_image {
+    display: block;
+    margin: 0 auto ;
+    width: 100%; /* スマートフォン・タブレットでは幅を調整 */
+    height: auto;
+  }
+
+  /* テキストの共通スタイル */
+  .item_text01,.item_text02,.item_text03,.about_message {
+    margin: 0 24px; /* 左右マージン */
+    text-align: center;
+    line-height: 2.2;
+    font-size: 14px;
+    padding: 20px 0 25px 0;
+  }
+  .item_text01{
+    padding: 0 0 20px 0;
+  }
+  /*  */
+  .item_image01,.item_image03 {
+    width: 100%;
+    flex-direction: column; /* 上書きして縦並びに */
+    margin: 0 auto; /* 左右マージン */
+    text-align: left;
+    line-height: 2.2;
+    font-size: 14px;
+    padding: 0 0 20px 0;
+  }
+  .item_image02{
+    width: 100%;
+    flex-direction: column; /* 上書きして縦並びに */
+    margin: 0 auto; /* 左右マージン */
+    text-align: left;
+    line-height: 2.2;
+    font-size: 14px;
+    padding: 0 0 20px 0;
+  }
+  .item_text02{
+    padding: 0px 0 30px 0;
+  }
+
+  /* viewmore */
+  .viewmore {
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 56px;
+    margin-bottom: 100px;
+  }
+  .viewmore a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #cd5638;
+    padding: 12px 24px;
+  }
+  .viewmore:hover {
+    background: #f39800;
+  }
+
+  /* お知らせ・news */
+  #news {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 80px auto 0 auto;
+    padding: 12px;
+  }
+  .news_text {
+    background-color: #f8eed1;
+  }
+  .news_text ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 40px 0 60px 0;
+  }
+  .news_text li {
+    border-bottom: 1px solid #000000;
+  }
+  .news_text li + li {
+    margin-top: 16px;
+  }
+  .news_text li :last-child {
+    border: none;
+  }
+  .news_text time {
+    font-size: 12px;
+    margin-left: 24px;
+  }
+  .news_text p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-left: 24px;
+    padding: 10px 0;
+  }
+  /* 店舗案内・shop */
+  #shop {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 12px;
+  }
+  .honten {
+    display: block;
+    width: 100%;
+  }
+  .honten_title1 {
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+  }
+  .honten_title2 {
+    display: none;
+  }
+  .honten_info {
+  }
+  .honten_section {
+    margin-top: -8px;
+    line-height: 1.2;
+    border: 6px #000000 solid;
+    text-align: left;
+  }
+  .honten_section p {
+    margin-left: 24px;
+  }
+  .honten_link {
+  }
+  .tel {
+  }
+  .tel a {
+    font-size: 32px;
+  }
+
+  .fax {
+  }
+
+  .honten_contact a {
+    display: none; /* スマホ・タブレットでは非表示 */
+    /* 以下は念のため残しますが、display:noneなので影響しません */
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    background: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    border: 0px #ffffff solid;
+  }
+  .honten_map a {
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+    background: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    border: 0px #ffffff solid;
+  }
+
+  .rinencity_read {
+    display: none;
+  }
+
+  .rinencity {
+    display: block;
+    width: 100%;
+  }
+  .rinencity_title {
+    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+  }
+  .rinencity_photo {
+    line-height: 0;
+  }
+  .rinencity_photo img {
+    width: 100%;
+  }
+  .rinencity_section {
+    margin-top: 0px;
+    line-height: 1.2;
+    border: 6px #000000 solid;
+    text-align: left;
+  }
+  .rinencity_section p {
+    margin-left: 24px;
+  }
+  .rinencity_title02 {
+    display: none;
+  }
+  .hp {
+    
+  }
+  .rinencity_contact a {
+    display: none; /* スマホ・タブレットでは非表示 */
+    /* 以下は念のため残しますが、display:noneなので影響しません */
+    margin: 0px auto;
+    width: 100%;
+    text-align: center;
+    background: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    border: 0px #ffffff solid;
+  }
+  .rinencity_map a {
+    display: block;
+    margin: 0px auto;
+    
+    text-align: center;
+    background: #000000;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    border: 0px #ffffff solid;
+  }
+
+  .honten img,
+  .rinencity img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  .shop_contact a,
+  .shop_map a {
+    display: block;
+    margin: 10px auto;
+    width: 90%;
+    text-align: center;
+    background: #bf830b;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+
+  /* オンラインショップ・online */
+  #online {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 12px;
+  }
+  .online_pc {
+    display: none; /* スマホ・タブレットではPC版の画像を非表示 */
+  }
+  .online_sp {
+    display: block; /* スマホ・タブレットではSP版の画像を表示 */
+    width: 100%;
+    height: auto;
+  }
+  /* フッター・footer */
+  footer {
+    text-align: center; /* 全体の中央揃えを維持 */
+    padding: 1em; /* 既存のパディングを維持 */
+    display: flex; /* Flexboxを有効に */
+    flex-direction: column; /* 子要素を縦方向に並べる */
+    align-items: center; /* 子要素を水平方向の中央に配置 */
+    background-color: #bf830b;
+  }
+
+  /* ロゴ */
+  footer img {
+    max-width: 180px; /* ロゴの最大幅を維持 */
+    width: 80%; /* 親要素に対する幅 */
+    height: auto;
+    margin: 0 auto 30px auto; /* 中央寄せにし、下に余白を追加 */
+    display: block;
+  }
+  .footer_info {
+    background-color: #bf830b;
+    color: #ffffff;
+  }
+  /* フッターナビゲーション (footermenu01とfootermenu02を統合して縦並びにする) */
+  #footer_nav {
+    width: 100%;
+    display: flex; /* #footer_nav をFlexコンテナに */
+    flex-wrap: wrap; /* 必要に応じて折り返す */
+    justify-content: center; /* メニュー全体を中央に */
+  }
+
+  #footer_nav ul {
+    list-style: none;
+    margin: 0;
+    width: 50%; /* 各 ul をフッターナビの半分の幅にする */
+    box-sizing: border-box; /* パディングを含める */
+    text-align: left; /* リストアイテムを左寄せに */
+  }
+
+  .footermenu01 {
+    /* 1列目 (左側) の調整 */
+    text-align: center;
+    font-weight: normal;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 56px;
+    padding-left: 5%; /* 左端から少し余白 */
+  }
+  .footermenu01 a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #bf830b;
+    padding: 12px 24px;
+  }
+  .footermenu01:hover {
+  }
+
+  .footermenu02 {
+    /* 2列目 (右側) の調整 */
+    text-align: center;
+    font-weight: normal;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 56px;
+    padding-left: 5%; /* 左端から少し余白 */
+  }
+
+  .footermenu01 li,
+  .footermenu02 li {
+    display: block;
+    margin: 8px 0; /* 各メニュー項目の上下の余白 */
+    white-space: nowrap; /* テキストの折り返しを防ぐ */
+    overflow: hidden; /* はみ出した部分を隠す */
+    text-overflow: ellipsis; /* はみ出した部分を「...」で表示 */
+  }
+
+  .footermenu01 li a,
+  .footermenu02 li a {
+    color: #ffffff;
+    font-size: 15px; /* フォントサイズを少し調整 */
+  }
+
+  /* SNS */
+  .footermenu_sns {
+    display: flex; /* 横並びを維持 */
+    justify-content: center; /* 中央に配置 */
+    padding: 0;
+    padding-top: 20px;
+    margin: 0 0 30px 0; /* 上下マージンを調整 */
+    width: 100%; /* 親要素の幅を使用 */
+  }
+  .footermenu_sns li {
+    display: inline-block; /* インラインブロックで横並び */
+    margin: 0 10px; /* アイコン間の左右の余白 */
+    margin-right: 30px;
+  }
+  .footermenu_sns img {
+    width: 50px; /* アイコンのサイズを少し大きく */
+    height: auto;
+    margin: 0 auto; /* 親から継承されるマージンをリセット */
+  }
+  .footer_line {
+  }
+  .footer_Instagram {
+  }
+
+  /* 連絡先情報 */
+  .footermenu03 {
+    justify-self: center;
+    padding: 0 24px; /* 左右の余白 */
+    line-height: 1.3; /* 行間 */
+    margin-bottom: 20px; /* 下に余白を追加 */
+    padding-left: 75px;
+  }
+  .footermenu03 p {
+    color: #ffffff;
+    text-align: left;
+    margin-bottom: 8px; /* 各行の下に余白 */
+    font-size: 15px; /* 文字サイズ調整 */
+  }
+  .footermenu03 a {
+    color: #ffffff;
+  }
+  .footermenu03 .tel a {
+    font-size: 18px; /* 電話番号のフォントサイズ調整 */
+    font-weight: bold; /* 必要であれば太字に */
+  }
+  /* 著作権表示 */
+  #copyright {
+    margin-top: 20px;
+    font-size: 0.8em; /* フォントサイズを小さく */
+    color: #ffffff;
+    width: 100%; /* 親要素の幅を使用 */
+  }
+}
+/* SP版トップページここまで */
+
+/* SP版メニューここから */
+.subtext_item {
+  margin: 0 24px; /* 左右マージン */
+    text-align: center;
+    line-height: 2.2;
+    font-size: 14px;
+    padding: 20px 0 25px 0;
+}
+.item_syoukai img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+.kashipan_title,.souzaipan_title,.other_title,.drink_title{
+        text-align: center;
+        background-color: #bf830b;
+        color: #ffffff;
+        font-weight: normal;
+        margin: 0 auto;
+        padding: 12px;
+}
+/* SP版メニューここまで */
+/* SP版お問い合わせここから */
+#question_title {
+      margin-top: -53px;
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    padding: 12px;
+}
+.shop_title {
+  display: none;
+}
+.shop_form {
+  margin-left: 20px;
+  padding-bottom: 10px;
+}
+/* SP版お問い合わせここまで */
+/* SP版お客様の声ここから */
+.customer_section {
+margin-top: -50px;
+}
+.customer_section img {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+#customer_title {
+  text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    padding: 12px;
+    margin-top: 0px;
+}
+.about_message {
+  margin-top: -3px;
+}
+
+.customer_01 {
+    margin-left: 15px;
+    letter-spacing: 2.1px;
+    line-height: 1.7;
+}
+.customer_text01 {
+    margin-left: 20px;
+    margin-top: -10px;
+}
+/* SP版お客様の声ここまで */
+
+/* ------------------------------------- */
+/* PC版 (min-width: 769px 以上) */
+/* ------------------------------------- */
+/* PC版トップページここから */
+@media screen and (min-width: 769px) {
+  .menu-toggle {
+    display: none; /* PCではハンバーガーメニューを非表示 */
+  }
+  body {
+    /*background-image: url(../images/mokume.jpg);
+    background-repeat: repeat;*/
+  }
+  /* ヘッダー */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999; /* 他の要素より上に表示 */
+    background-color: #ffffff; /* 背景色を指定して透明を防ぐ */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 下にうっすら影をつけると自然です */
+  }
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    height: 110px;
+  }
+  .header_logo {
+    max-width: 130px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  #header_nav {
+    display: block; /* PCではメニューを表示 */
+    position: static; /* positionをリセット */
+    max-height: none; /* max-heightをリセット */
+    opacity: 1; /* 不透明に */
+    transform: none; /* transformをリセット */
+  }
+  #header_nav ul {
+    display: flex; /* 横並び */
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+    font-size: 16px;
+    padding-right: 20px;
+  }
+  #header_nav ul li {
+    margin: 0;
+  }
+  #header_nav ul li a {
+    text-decoration: none;
+        color: #bf830b;
+        border-right: 1px solid #000000;
+        border-left: 1px solid #000000;
+        padding: 0 20px;
+  }
+  #header_nav ul li a:hover { /* ホバー時の色も設定する場合 */
+    text-decoration: underline; /* ホバーで下線を表示 */
+    color: #FFC0CB; /* ホバー時の色 (例: #FFC0CB でピンク) */
+  }
+
+  /* パンくずリスト */
+  #breadcrumb {
+    display: block; /* PCでは表示 */
+    width: 1000px;
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 auto;
+    margin-top: -30px;
+    padding-bottom: 30px;
+  }
+  #breadcrumb ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 1000px;
+  }
+  #breadcrumb li {
+    margin-right: 5px; /* アイテム間のスペース */
+  }
+  #breadcrumb li:not(:last-child)::after {
+    content: " > "; /* 区切り文字 */
+    margin-left: 5px;
+  }
+
+  /* ファーストビュー */
+  .fv {
+    
+  }
+  .fv img {
+    width: 100%; /* PC版の幅100% */
+    max-width: 1000px; /* 最大幅の設定 */
+    height: 700px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    margin-top: 40px;
+  }
+
+  /* こだわり・about */
+  .about_text {
+    text-align: center;
+    padding-top: 140px; /* PC版でのパディング */
+    font-size: 30px;
+    color: #333333;
+    line-height: 1.5;
+    letter-spacing: 5.5px;
+  }
+  
+  .en_text{
+    text-align: center;
+    font-size: 16px;
+    color: #333333;
+    margin-top: -10px;
+  }
+
+  .subtext {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    line-height: 2.8;
+    padding-top: 10px;
+  }
+
+  /* 商品紹介・item */
+  #item {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 12px 0; /* PC版は左右パディング0 */
+    width: 100%; /* 全幅を使う */
+    max-width: 1000px; /* 最大幅を設定して、中央に寄せる */
+  }
+
+  .item_section {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* 各商品コンテンツ（画像とテキストのペア）の共通スタイル */
+  .item_content {
+    display: flex; /* Flexboxを使って子要素（画像とテキスト）を横並びにする */
+    align-items: center; /* 垂直方向の中央揃え */
+    margin-bottom: 40px; /* 各ペアの下に余白 */
+    gap: 20px; /* 画像とテキストの間の余白 */
+    max-width: 900px; /* item_boxの内側に少し狭い最大幅を設定 */
+    margin-left: auto; /* 中央寄せ */
+    margin-right: auto; /* 中央寄せ */
+    padding: 20px 0; /* 上下のパディングを追加 */
+  }
+  /* 画像の共通スタイル */
+  .item_image {
+    flex-shrink: 0; /* 画像が縮まないようにする */
+    width: 400px; /* PC版での画像の固定幅 */
+    height: auto; /* 高さを自動調整 */
+    object-fit: cover; /* 画像がはみ出さないように調整 */
+  }
+  /* テキストの共通スタイル */
+  .item_text {
+    flex-grow: 1; /* テキストが残りのスペースを埋める */
+    font-size: 18px; /* PC版のフォントサイズ */
+    line-height: 2; /* 行間 */
+    text-align: left; /* 左揃え */
+    padding: 0 20px; /* 左右にパディング */
+    margin: 0; /* スマートフォン・タブレットでのmarginをリセット */
+  }
+  .item_01 {
+        display: flex;
+        gap: 30px;
+        font-size: 16px;
+        line-height: 2.8;
+        margin: 40px 0;
+  }
+  .item_02 {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 30px;
+        font-size: 16px;
+        line-height: 2.8;
+        margin: 40px 0;
+  }
+  .item_03 {
+        display: flex;
+        gap: 30px;
+        font-size: 16px;
+        line-height: 2.8;
+        margin: 40px 0;
+  }
+  
+  .item_image01 {
+    width: 430px;
+    height: auto;
+  }
+  .item_image02 {
+    width: 430px;
+    height: auto;
+  }
+  .item_image03 {
+    width: 430px;
+    height: auto;
+  }
+.viewmore {
+    text-align: center;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 56px;
+    padding-top:40px;
+  }
+  .viewmore a {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #cd5638;
+    padding: 12px 24px;
+  }
+  .viewmore:hover {
+    
+  }
+  
+
+  /* お知らせ・news */
+  #news {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 120px auto 0 auto; /* PC版でのマージン */
+    padding: 12px 0; /* PC版のパディング */
+    width: 100%;
+    max-width: 1000px; /* PC版の最大幅 */
+  }
+  .news_text {
+    background-color: #f8eed1;
+    width:1000px;
+    margin: 0 auto;
+  }
+  .news_text ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 40px 0 60px 0;
+  }
+  .news_text li {
+    border-bottom: 1px solid #000000;
+  }
+  .news_text li + li {
+    margin-top: 16px;
+  }
+  .news_text li :last-child {
+    border: none;
+  }
+  .news_text time {
+    font-size: 12px;
+    margin-left: 24px;
+  }
+  .news_text p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-left: 24px;
+    padding: 10px 0;
+  }
+
+  /* 店舗案内・shop */
+  .shop_section {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  #shop {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 12px 0;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 120px;
+  }
+  .honten {
+    align-items: center;
+    justify-content: center;
+    margin: 0 ;
+    max-width: 1000px;
+    gap: 40px;
+  }
+  .honten_title1 {
+    display: none;
+    text-align: center;
+        margin: 0 auto;
+        padding: 12px 0;
+        width: 100%;
+        max-width: 1000px;
+  }
+  .honten_info{
+    display:flex;
+    width: 1000px;
+    height: 450px;
+  }
+  .honten_photo  {
+    width: 600px; /* PC版での画像幅 */
+    height: 450px;
+  }
+  .honten_section {
+    flex-grow: 1;
+    border: none; /* PC版では枠線を削除 */
+    text-align: left;
+    height: 450px;
+  }
+  .honten_section p {
+    margin-left: 0; /* PC版ではマージンをリセット */
+  }
+  .honten_2 {
+    width: auto;
+    
+  }
+  .honten_title2 {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    padding:20px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .honten_right{
+    border: 1px solid #000000;
+  }
+  .honten_right p {
+    margin-left: 20px;
+  }
+  .tel a {
+    text-decoration: none;
+    color: #bf830b;
+    
+  }
+  .mail a {
+    text-decoration: none;
+    color: #bf830b;
+    
+  }
+  .honten_link{
+    
+  }
+  .honten_contact,.honten_map {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    padding:20px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .honten_contact a,
+  .honten_map a {
+    color: #ffffff;
+    display: inline-block; /* PCではインラインブロックで横並び */
+    width: auto;
+    margin: 0 10px; /* 左右にマージン */
+    padding: 10px 20px; /* パディングを調整 */
+  }
+  .honten_map{
+    margin-top: 8px;
+  }
+  .rinencity_read {
+    display: none; /* PCでは表示 */
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+  }
+
+  .rinencity {
+    
+    align-items: center;
+    justify-content: center;
+    margin: 40px auto;
+    max-width: 1000px;
+    gap: 40px;
+    flex-direction: row-reverse; /* 本店と逆の配置 */
+  }
+  .rinencity_title {
+    display: none;
+    margin-top: 0;
+  }
+  .rinencity_info {
+    display: flex;
+  }
+  .rinencity_photo img {
+    display: flex;
+    
+  }
+  .build {
+    width:600px;
+    height: 294px;
+    object-fit: cover;
+  }
+  .build img {
+    object-fit: cover;
+  }
+  .foodcoat {
+    width:600px;
+    height: 299px;
+    object-fit: cover;
+  }
+  .foodcoat img {
+    object-fit: cover;
+  }
+  .rinencity_section {
+    
+    flex-grow: 1;
+    border: none; /* PC版では枠線を削除 */
+    text-align: left;
+    margin-top: 0;
+  }
+  .rinencity_section p {
+    margin-left: 0; /* PC版ではマージンをリセット */
+  }
+  .rinencity_title02 {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    padding:20px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .rinencity_right {
+    border: 1px solid #000000;
+    line-height: 1.9;
+    font-size: 18px;
+  }
+  .rinencity_right p {
+     margin-left: 20px;
+
+  }
+  .rinencity_link{
+    
+  }
+  .rinencity_contact,.rinencity_map {
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    padding:20px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .rinencity_contact a,
+  .rinencity_map a {
+    color: #ffffff;
+    display: inline-block; /* PCではインラインブロックで横並び */
+    width: auto;
+    margin: 0 10px; /* 左右にマージン */
+    padding: 10px 20px; /* パディングを調整 */
+  }
+  .rinencity_map {
+    margin-top: 8px;
+  }
+  
+
+  .shop_contact a,
+  .shop_map a {
+    display: inline-block; /* PC版ではinline-blockに */
+    width: auto; /* 幅を自動調整 */
+    margin: 10px; /* マージンを調整 */
+  }
+
+  /* オンラインショップ・online */
+  #online {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    margin-top: 120px;
+    padding: 16px 0;
+    width: 100%;
+    max-width: 1000px;
+  }
+  .online_pc {
+    display: block; /* PCではPC版の画像を表示 */
+    width: 100%;
+    max-width: 1000px; /* PC版の画像サイズを調整 */
+    height: auto;
+    margin: 0px auto;
+  }
+  .online_sp {
+    display: none; /* PCではSP版の画像を非表示 */
+  }
+      /* フッター・footer */
+    footer {
+        background-color: #bf830b;
+        color: #ffffff;
+        margin-top: 100px;
+        padding: 40px 0; /* 上下のパディングを追加してコンテンツの垂直方向のスペースを確保 */
+        display: flex; /* Flexboxを有効に */
+        flex-direction: column; /* 要素を縦に配置し、中央揃えにする */
+        align-items: center; /* 水平方向の中央揃え */
+    }
+
+    .footer_logo {
+        width: 250px; /* ロゴの幅を調整 */
+        height: auto;
+        margin-bottom: 20px; /* ロゴとコンテンツの間に余白を追加 */
+    }
+
+    .footer_info {
+        display: flex; /* footer_infoをflexコンテナにし、子要素を横並びにする */
+        justify-content: center; /* 子要素を中央に配置 */
+        align-items: flex-start; /* 子要素の上端を揃える */
+        width: 100%; /* 親の幅いっぱいに広げる */
+        max-width: 1200px; /* 最大幅を設定して、コンテンツが広がりすぎないようにする */
+        margin: 0 auto; /* 中央寄せ */
+        gap: 60px; /* 各セクション間の隙間 */
+        flex-wrap: wrap; /* 必要に応じて折り返しを許可 */
+        padding-top: 60px;
+        padding-left:20px;
+    }
+
+    /* フッターナビゲーション */
+    #footer_nav {
+        display: flex;
+        flex-direction: row; /* 横並び */
+        justify-content: flex-start; /* 左寄せ */
+        width: auto; /* 幅を自動調整 */
+        gap: 60px; /* メニューリスト間の隙間を調整 */
+    }
+
+    #footer_nav ul {
+        width: auto; /* 幅を自動調整 */
+        padding: 0; /* パディングをリセット */
+        margin: 0; /* マージンをリセット */
+        list-style: none; /* リストの点マークを非表示 */
+    }
+
+    .footermenu01,
+    .footermenu02 {
+        margin-top: 0; /* マージンをリセット */
+        text-align: left; /* 左揃え */
+    }
+
+    .footermenu01 li,
+    .footermenu02 li {
+        display: list-item; /* 通常のリストアイテムに戻す */
+        white-space: normal; /* 折り返しを許可 */
+        overflow: visible; /* はみ出しを許可 */
+        text-overflow: clip; /* ...を非表示 */
+        margin-bottom: 8px; /* 各リストアイテムの下に余白 */
+    }
+
+    .footermenu01 li a,
+    .footermenu02 li a {
+        color: #ffffff;
+        font-size: 15px; /* フォントサイズを調整 */
+        text-decoration: none; /* 下線を非表示 */
+    }
+
+    .footermenu01 li a:hover,
+    .footermenu02 li a:hover {
+        text-decoration: underline; /* ホバーで下線を表示 */
+    }
+
+    /* SNSと連絡先情報をまとめるコンテナ */
+    .footer_contact_sns_group {
+        display: flex;
+        flex-direction: column; /* 縦並び */
+        align-items: flex-start; /* 左揃え */
+        gap: 15px; /* SNSと連絡先情報の間の隙間 */
+    }
+
+    /* SNS */
+    .footermenu_sns {
+        padding: 0;
+        margin: 0;
+        width: auto;
+        display: flex; /* アイコンを横並びにする */
+        justify-content: flex-start; /* 左寄せ */
+    }
+
+    .footermenu_sns li {
+        margin: 0 15px 0 0; /* アイコン間の右の余白 */
+        display: inline-block; /* インラインブロックで横並び */
+    }
+    .footermenu_sns li:last-child {
+        margin-right: 0; /* 最後のSNSアイコンの右マージンをリセット */
+    }
+
+    .footermenu_sns img {
+        width: 40px; /* PC版のアイコンサイズ */
+        height: auto;
+    }
+
+    /* 連絡先情報 */
+    .footermenu03 {
+        padding: 0; /* パディングをリセット */
+        text-align: left; /* 左揃え */
+        margin: 0; /* マージンをリセット */
+        line-height: 1.5; /* 行間調整 */
+    }
+    .footermenu03 p {
+        color: #ffffff;
+        text-align: left;
+        margin-bottom: 5px; /* 各行の下に余白 */
+        font-size: 15px; /* 文字サイズ調整 */
+    }
+    .footermenu03 a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+    .footermenu03 a:hover {
+        text-decoration: underline;
+    }
+
+    /* 著作権表示 */
+    #copyright {
+        margin-top: 30px; /* 他の要素との間に余白 */
+        font-size: 0.8em;
+        color: #ffffff;
+        width: 100%; /* 親の幅を使用 */
+        text-align: center; /* 中央寄せ */
+    }
+/* PCトップページここまで */
+/* PCこだわりここから */
+    .page_title {
+    text-align: center; /* 中央揃え */
+        font-size: 36px; /* 適切なフォントサイズ */
+        color: #333333; /* 文字色 */
+        margin-top: 10px;
+        line-height: 1.8;
+  }
+  .about_message {
+    text-align: center;
+    font-size: 32px; /* 適切なフォントサイズ */
+        color: #333333; /* 文字色 */
+        margin: 80px auto;
+  }
+/* PCこだわりここまで */
+/* PCクリームボックスここから */
+  .creambox_title {
+    text-align: center; /* 中央揃え */
+        font-size: 36px; /* 適切なフォントサイズ */
+        color: #333333; /* 文字色 */
+        margin-top: 10px;
+  }
+  .creambox_message {
+    width: 1000px;
+    text-align: center;
+    font-size: 24px; /* 適切なフォントサイズ */
+        color: #333333; /* 文字色 */
+        margin: 80px auto;
+
+  }
+  .creambox_section {
+
+  }
+  #creambox_info {
+  text-align: center;
+        background-color: #bf830b;
+        color: #ffffff;
+        font-weight: normal;
+        margin: 0 auto;
+        padding: 12px 0;
+        width: 100%;
+        max-width: 1000px;
+        }
+  .creambox_01 {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .creambox_image01 {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+  }
+  .creambox_text01 {
+    
+  }
+  /* PC商品紹介ここから */
+  .item_syoukai  {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  .item_syoukai figure {
+    max-width: 300px; /* 例: 最大幅を設定 */
+        flex-basis: calc(33.33% - 27px); /* 3列表示でgapを考慮 (40px/3*2) */
+        margin: 0;
+  }
+  .item_syoukai img {
+    width: 300px; /* 親要素の幅に合わせて画像を拡大縮小 */
+        height: 250px;
+        display: block;
+        padding-top: 40px;
+  }
+  /* 菓子パンここから */
+  .subtext_item {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    line-height: 2.8;
+    padding-top: 30px;
+  }
+
+  .kashipan_title {
+    width: 100%;
+    height: auto;
+    background-color:#bf830b;
+    font-size: 30px;
+        color: #ffffff;
+        margin-top: 60px;
+        margin-bottom: -30px;
+        display: flex;
+        padding: 5px;
+  }
+  .obi_title {
+    width: 10px;
+    background-color: #000000;
+    
+    
+  }
+  .obi_title p {
+    background-color: #000000;
+  }
+  .kashipan_photo {
+        display: flex;
+        /* flex-wrap: wrap; /* 画面幅が狭いときに折り返す */
+        justify-content: left; 
+        list-style: none;
+        gap: 40px;
+        /* width: 300px; /* ここが固定されているとレイアウトが崩れる可能性 */
+        /* height: 250px; */
+        max-width: 1200px; /* 親要素の最大幅などに合わせる */
+        margin: 0 auto; /* 中央揃え */
+        padding: 20px 0px 20px 0px; /* 左右の余白 */
+        text-align: left;
+        width: 1000px;
+        margin-bottom: 40px; /* 必要に応じて調整 */
+        font-size: 2em; /* 適切なサイズに */
+    }
+
+    .kashipan_photo figure {
+        /* width: 300px; */ /* ここも固定せず、flex-basisやmax-widthで調整する方が良い */
+        /* height: 250px; */
+        max-width: 300px; /* 例: 最大幅を設定 */
+        flex-basis: calc(33.33% - 27px); /* 3列表示でgapを考慮 (40px/3*2) */
+        margin: 0;
+    }
+    .kashipan_photo img {
+        width: 300px; /* 親要素の幅に合わせて画像を拡大縮小 */
+        height: 250px;
+        display: block;
+    }
+    .kashipan_syoukai {
+        text-align: left;
+        width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 40px; /* 必要に応じて調整 */
+        font-size: 2em; /* 適切なサイズに */
+    }
+    .kashipan_figcaption {
+      margin: 20px 0 0;
+      font-size: 16px;
+    }
+
+    /* 惣菜パンここから */
+    .souzaipan_title {
+      width: 100%;
+    height: auto;
+    background-color:#bf830b;
+    font-size: 30px;
+        color: #ffffff;
+        margin-top: 60px;
+        margin-bottom: -30px;
+        display: flex;
+        padding: 5px;
+    }
+    .souzaipan_photo {
+        display: flex;
+        /* flex-wrap: wrap; /* 画面幅が狭いときに折り返す */
+        justify-content: left; /* 中央揃え */
+        list-style: none;
+        gap: 40px;
+        /* width: 300px; /* ここが固定されているとレイアウトが崩れる可能性 */
+        /* height: 250px; */
+        max-width: 1200px; /* 親要素の最大幅などに合わせる */
+        margin: 0 auto; /* 中央揃え */
+        padding: 20px 0px 20px 0px; /* 左右の余白 */
+    }
+
+    .souzaipan_photo figure {
+        /* width: 300px; */ /* ここも固定せず、flex-basisやmax-widthで調整する方が良い */
+        /* height: 250px; */
+        max-width: 300px; /* 例: 最大幅を設定 */
+        flex-basis: calc(33.33% - 27px); /* 3列表示でgapを考慮 (40px/3*2) */
+        margin: 0;
+    }
+    .souzaipan_photo img {
+        width: 300px; /* 親要素の幅に合わせて画像を拡大縮小 */
+        height: 250px;
+        display: block;
+    }
+    .souzaipan_syoukai {
+        text-align: left;
+        width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 40px; /* 必要に応じて調整 */
+        font-size: 2em; /* 適切なサイズに */
+    }
+    .souzaipan_figcaption {
+      margin: 20px 0 0;
+      font-size: 16px;
+    }
+    
+    /* その他ここから */
+    .other_title {
+      width: 100%;
+    height: auto;
+    background-color:#bf830b;
+    font-size: 30px;
+        color: #ffffff;
+        margin-top: 60px;
+        margin-bottom: -30px;
+        display: flex;
+        padding: 5px;
+    }
+    .other_photo {
+        display: flex;
+        /* flex-wrap: wrap; /* 画面幅が狭いときに折り返す */
+        justify-content: left; /* 中央揃え */
+        list-style: none;
+        gap: 40px;
+        /* width: 300px; /* ここが固定されているとレイアウトが崩れる可能性 */
+        /* height: 250px; */
+        max-width: 1200px; /* 親要素の最大幅などに合わせる */
+        margin: 0 auto; /* 中央揃え */
+        padding: 20px 0px 20px 0px; /* 左右の余白 */
+    }
+
+    .other_photo figure {
+        /* width: 300px; */ /* ここも固定せず、flex-basisやmax-widthで調整する方が良い */
+        /* height: 250px; */
+        max-width: 300px; /* 例: 最大幅を設定 */
+        flex-basis: calc(33.33% - 27px); /* 3列表示でgapを考慮 (40px/3*2) */
+        margin: 0;
+    }
+    .other_photo img {
+        width: 300px; /* 親要素の幅に合わせて画像を拡大縮小 */
+        height: 250px;
+        display: block;
+    }
+    .other_syoukai {
+        text-align: left;
+        width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 40px; /* 必要に応じて調整 */
+        font-size: 2em; /* 適切なサイズに */
+    }
+    .other_figcaption {
+      margin: 20px 0 0;
+      font-size: 16px;
+    }
+    /* ドリンクここから */
+    .drink_title {
+      width: 100%;
+    height: auto;
+    background-color:#bf830b;
+    font-size: 30px;
+        color: #ffffff;
+        margin-top: 60px;
+        margin-bottom: -30px;
+        display: flex;
+        padding: 5px;
+    }
+    .drink_photo {
+        display: flex;
+        /* flex-wrap: wrap; /* 画面幅が狭いときに折り返す */
+        justify-content: left; /* 中央揃え */
+        list-style: none;
+        gap: 10px;
+        /* width: 300px; /* ここが固定されているとレイアウトが崩れる可能性 */
+        /* height: 250px; */
+        max-width: 1200px; /* 親要素の最大幅などに合わせる */
+        margin: 0 auto; /* 中央揃え */
+        padding: 20px 0px 20px 0px; /* 左右の余白 */
+    }
+
+    .drink_photo figure {
+        /* width: 300px; */ /* ここも固定せず、flex-basisやmax-widthで調整する方が良い */
+        /* height: 250px; */
+        max-width: 540px; /* 例: 最大幅を設定 */
+        flex-basis: calc(33.33% - 27px); /* 3列表示でgapを考慮 (40px/3*2) */
+        margin: 0;
+    }
+    .drink_photo img {
+        width: 500px; /* 親要素の幅に合わせて画像を拡大縮小 */
+        height: 400px;
+        display: block;
+    }
+    .drink_syoukai {
+        text-align: left;
+        width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 40px; /* 必要に応じて調整 */
+        font-size: 2em; /* 適切なサイズに */
+    }
+    .drink_figcaption {
+      margin: 20px 0 0;
+      font-size: 16px;
+    }
+    /* PC商品紹介ここまで */
+    /* PC店舗案内ここから */
+
+    /* お知らせ・news */
+  #question_title {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 120px auto 0 auto; /* PC版でのマージン */
+    padding: 12px 0; /* PC版のパディング */
+    width: 100%;
+    max-width: 1000px; /* PC版の最大幅 */
+  }
+  .question_text {
+    background-color: #f8eed1;
+    width:1000px;
+    margin: 0 auto;
+  }
+  .question_text ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 40px 0 60px 0;
+  }
+  .question_text li {
+    border-bottom: 1px solid #000000;
+  }
+  .question_text li + li {
+    margin-top: 16px;
+  }
+  .question_text li :last-child {
+    border: none;
+  }
+  .question_text time {
+    font-size: 12px;
+    margin-left: 24px;
+  }
+  .question_text p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-left: 24px;
+    padding: 10px 0;
+  }
+
+  /* お客様の声・customer */
+  .customer_section {
+    width: 1000px;
+    margin: 0 auto;
+  }
+  #customer_title {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 0 auto;
+    padding: 12px 0; /* PC版は左右パディング0 */
+    width: 100%; /* 全幅を使う */
+    max-width: 1000px; /* 最大幅を設定して、中央に寄せる */
+  }
+
+  /* 各商品コンテンツ（画像とテキストのペア）の共通スタイル */
+  .customer_content {
+    display: flex; /* Flexboxを使って子要素（画像とテキスト）を横並びにする */
+    align-items: center; /* 垂直方向の中央揃え */
+    margin-bottom: 40px; /* 各ペアの下に余白 */
+    gap: 20px; /* 画像とテキストの間の余白 */
+    max-width: 900px; /* item_boxの内側に少し狭い最大幅を設定 */
+    margin-left: auto; /* 中央寄せ */
+    margin-right: auto; /* 中央寄せ */
+    padding: 20px 0; /* 上下のパディングを追加 */
+  }
+  /* 画像の共通スタイル */
+  .customer_image {
+    flex-shrink: 0; /* 画像が縮まないようにする */
+    width:2200px; /* PC版での画像の固定幅 */
+    height: auto; /* 高さを自動調整 */
+    object-fit: cover; /* 画像がはみ出さないように調整 */
+  }
+  /* テキストの共通スタイル */
+  .customer_text {
+    flex-grow: 1; /* テキストが残りのスペースを埋める */
+    font-size: 18px; /* PC版のフォントサイズ */
+    line-height: 2; /* 行間 */
+    text-align: left; /* 左揃え */
+    padding: 0 20px; /* 左右にパディング */
+    margin: 0; /* スマートフォン・タブレットでのmarginをリセット */
+    border: 1px solid #000000;
+  }
+  .customer_text01  {
+    font-size: 18px;
+    padding-top: 3px;
+    border-bottom: solid 1px #000000;
+  }
+  .customer_text01 p {
+    
+  }
+  .customer_01 {
+        display: flex;
+        gap: 30px;
+        font-size: 16px;
+        line-height: 2.8;
+        margin: 40px 0;
+  }
+  .customer_02 {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 30px;
+        font-size: 16px;
+        line-height: 2.8;
+        margin: 40px 0;
+  }
+  .customer_03 {
+        display: flex;
+        gap: 30px;
+        font-size: 16px;
+        line-height: 2.8;
+        margin: 40px 0;
+  }
+  
+  .customer_image01 {
+    width: 300px;
+    height: 150px;
+  }
+  .customer_image02 {
+    width: 430px;
+    height: auto;
+  }
+  .customer_image03 {
+    width: 430px;
+    height: auto;
+  }
+  /* お知らせ・news */
+  #privacy {
+    text-align: center;
+    background-color: #bf830b;
+    color: #ffffff;
+    font-weight: normal;
+    margin: 80px auto 0 auto;
+    padding: 12px;
+  }
+  .privacy_text {
+    background-color: #f8eed1;
+  }
+  .privacy_text ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 40px 0 60px 0;
+  }
+  .privacy_text li {
+    border-bottom: 1px solid #000000;
+  }
+  .privacy_text li + li {
+    margin-top: 16px;
+  }
+  .privacy_text li :last-child {
+    border: none;
+  }
+  .privacy_text time {
+    font-size: 12px;
+    margin-left: 24px;
+  }
+  .privacy_text p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-left: 24px;
+    padding: 10px 0;
+  }
+}
